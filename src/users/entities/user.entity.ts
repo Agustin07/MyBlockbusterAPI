@@ -42,10 +42,11 @@ export class User {
   @OneToMany((type) => Rental, (rental) => rental.user)
   rentals: Rental[];
 
+  /*
   @BeforeInsert()
   async hashPassword() {
     this.password = await bcrypt.hash(this.password, 10);
-  }
+  }*/
 
   async comparePassword(attempt: string): Promise<boolean> {
     return await bcrypt.compare(attempt, this.password);

@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MoviesModule } from './movies/movies.module';
+import { UserSubscriber } from './users/subscribers/user.subscriber';
 
 @Module({
   imports: [
@@ -18,11 +19,12 @@ import { MoviesModule } from './movies/movies.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'blockbuster_testdb',
+      username: 'agustin',
+      password: 'applaudo',
+      database: 'blockbuster_db',
       synchronize: true,
       autoLoadEntities: true,
+      subscribers: [UserSubscriber,"dist/**/subscribers/*.{js,ts}"]
     }),
     MoviesModule,
   ],

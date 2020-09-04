@@ -18,6 +18,7 @@ export class AppController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@User() user: UserDto) {
+    console.log(user);
     return await this.authService.login(user);
   }
 

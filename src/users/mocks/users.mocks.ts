@@ -43,7 +43,7 @@ export const user1: User = {
   deletedAt: new Date('2020-06-25 12:47:12.422'),
   role: roleClient,
   rentals: [],
-  async hashPassword() {},
+  //async hashPassword() {},
   async comparePassword(attemp: string) {
     return true;
   },

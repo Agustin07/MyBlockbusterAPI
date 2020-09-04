@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Role } from './entities/role.entity';
 import { Rental } from '../movies/entities/rental.entity';
+import { UserSubscriber } from './subscribers/user.subscriber';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User, Role, Rental])],
